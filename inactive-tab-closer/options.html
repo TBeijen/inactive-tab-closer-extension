@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inactive Tab Closer Settings</title>
+  <style>
+    body { width: 400px; padding: 10px; }
+    #domains { width: 100%; height: 100px; }
+  </style>
+</head>
+<body>
+  <h1>Inactive Tab Closer Settings</h1>
+  <div>
+    <label for="domains">Domains to Monitor (one per line, wildcards supported):</label>
+    <textarea id="domains" placeholder="*.azure.com&#10;portal.azure.com"></textarea>
+  </div>
+  <div>
+    <label for="inactivityTime">Inactivity Time (minutes):</label>
+    <input type="number" id="inactivityTime" min="1" value="30">
+  </div>
+  <button id="save">Save Settings</button>
+  <div id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
