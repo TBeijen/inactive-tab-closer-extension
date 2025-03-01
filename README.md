@@ -9,7 +9,9 @@ Does this sound recognizable?
 
 Then this extension might be useful!
 
-![Inactive Tab Closer Logo](inactive-tab-closer/logo.svg)
+<p align="center">
+  <img align="center" width="200" alt="Inactive Tab Closer Logo" src="https://raw.githubusercontent.com/TBeijen/inactive-tab-closer-extension/refs/heads/main/inactive-tab-closer/icon.svg">
+</p>
 
 ## Install
 
