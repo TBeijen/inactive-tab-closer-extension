@@ -33,7 +33,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 setInterval(() => {
     chrome.storage.sync.get({
         monitoredDomains: ['*.azure.com', 'portal.azure.com'],
-        inactivityMinutes: 30
+        inactivityMinutes: 25
     }, (items) => {
         const inactivityMs = items.inactivityMinutes * 60 * 1000;
         const now = Date.now();

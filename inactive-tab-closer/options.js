@@ -23,7 +23,7 @@ function saveOptions() {
 function restoreOptions() {
     chrome.storage.sync.get({
         monitoredDomains: ['*.azure.com', 'portal.azure.com'],
-        inactivityMinutes: 30
+        inactivityMinutes: 25
     }, (items) => {
         document.getElementById('domains').value = items.monitoredDomains.join('\n');
         document.getElementById('inactivityTime').value = items.inactivityMinutes;
