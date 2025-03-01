@@ -5,9 +5,9 @@
     "description": "Automatically closes tabs matching specified domains after inactivity",
     "permissions": [
         "tabs",
-        "storage",
-        "activeTab"
+        "storage"
     ],
+    "host_permissions": [],
     "background": {
         "service_worker": "background.js"
     },
@@ -18,5 +18,10 @@
             "48": "icon48.png",
             "128": "icon128.png"
         }
+    },
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
     }
 }
