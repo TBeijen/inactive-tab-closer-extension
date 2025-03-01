@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#0078D4" />
+  
+  <!-- Entra ID inspired shape (simplified) -->
+  <path d="M40 40 L64 30 L88 40 L88 70 L64 85 L40 70 Z" fill="#50E6FF" stroke="#FFFFFF" stroke-width="2" />
+  
+  <!-- Clock face -->
+  <circle cx="64" cy="64" r="28" fill="#FFFFFF" opacity="0.9" />
+  
+  <!-- Clock ticks -->
+  <line x1="64" y1="40" x2="64" y2="44" stroke="#333333" stroke-width="2" />
+  <line x1="64" y1="84" x2="64" y2="88" stroke="#333333" stroke-width="2" />
+  <line x1="40" y1="64" x2="44" y2="64" stroke="#333333" stroke-width="2" />
+  <line x1="84" y1="64" x2="88" y2="64" stroke="#333333" stroke-width="2" />
+  
+  <!-- Clock hands -->
+  <line x1="64" y1="64" x2="64" y2="48" stroke="#333333" stroke-width="3" />
+  <line x1="64" y1="64" x2="76" y2="70" stroke="#333333" stroke-width="3" />
+  
+  <!-- Center dot -->
+  <circle cx="64" cy="64" r="3" fill="#333333" />
+  
+  <!-- "X" mark for closing -->
+  <path d="M92 36 L98 42 M98 36 L92 42" stroke="#FF3333" stroke-width="4" stroke-linecap="round" />
+</svg>

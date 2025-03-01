@@ -38,6 +38,8 @@ setInterval(() => {
         const inactivityMs = items.inactivityMinutes * 60 * 1000;
         const now = Date.now();
 
+        console.log('Checking tabs for inactivity. monitoredDomains:', items.monitoredDomains, 'inactivityMs:', inactivityMs, 'inactivityMinutes:', items.inactivityMinutes);
+
         chrome.tabs.query({}, (tabs) => {
             tabs.forEach(tab => {
                 if (!tab.url) return;
@@ -48,8 +50,12 @@ setInterval(() => {
                 // Get last activity time
                 const lastActivity = tabStates.get(tab.id) || 0;
 
+                console.log('Checking tab.url:', tab.url, 'tab.id:', tab.id, 'Last activity:', lastActivity, 'now - lastActivity:', now - lastActivity);
+
                 // Close if inactive
                 if (now - lastActivity > inactivityMs) {
+                    console.log('Closing tab.url:', tab.url, 'tab.id:', tab.id, 'now - lastActivity:', now - lastActivity);
+
                     chrome.tabs.remove(tab.id);
                     tabStates.delete(tab.id);
                 }
