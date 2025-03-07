@@ -16,6 +16,20 @@ function matchesDomain(url, domains) {
     });
 }
 
+function getFormattedDateTime() {
+    const now = new Date();
+
+    // Format: YYYY-MM-DD HH:MM:SS
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
 chrome.tabs.onActivated.addListener((activeInfo) => {
     chrome.tabs.get(activeInfo.tabId, (tab) => {
         if (tab.url) {
@@ -38,7 +52,7 @@ setInterval(() => {
         const inactivityMs = items.inactivityMinutes * 60 * 1000;
         const now = Date.now();
 
-        console.log('Checking tabs for inactivity. monitoredDomains:', items.monitoredDomains, 'inactivityMs:', inactivityMs, 'inactivityMinutes:', items.inactivityMinutes);
+        console.log('DEBUG', getFormattedDateTime(), 'Checking tabs for inactivity. monitoredDomains:', items.monitoredDomains, 'inactivityMs:', inactivityMs, 'inactivityMinutes:', items.inactivityMinutes);
 
         chrome.tabs.query({}, (tabs) => {
             tabs.forEach(tab => {
@@ -50,11 +64,11 @@ setInterval(() => {
                 // Get last activity time
                 const lastActivity = tabStates.get(tab.id) || 0;
 
-                console.log('Checking tab.url:', tab.url, 'tab.id:', tab.id, 'Last activity:', lastActivity, 'now - lastActivity:', now - lastActivity);
+                console.log('DEBUG', getFormattedDateTime(), 'Checking tab.url:', tab.url, 'tab.id:', tab.id, 'Last activity:', lastActivity, 'now - lastActivity:', now - lastActivity);
 
                 // Close if inactive
                 if (now - lastActivity > inactivityMs) {
-                    console.log('Closing tab.url:', tab.url, 'tab.id:', tab.id, 'now - lastActivity:', now - lastActivity);
+                    console.log('INFO', getFormattedDateTime(), 'Closing tab.url:', tab.url, 'tab.id:', tab.id, 'now - lastActivity:', now - lastActivity);
 
                     chrome.tabs.remove(tab.id);
                     tabStates.delete(tab.id);
