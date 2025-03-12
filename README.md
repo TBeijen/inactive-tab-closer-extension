@@ -23,7 +23,7 @@ To install:
 * Clone the git repo
 * Open [chrome://extensions/](chrome://extensions/)
 * Make sure 'Developer mode' is enabled (top right)
-* Select 'Load unpacked' and point to the cloned repo directory holding the `manigest.json` file
+* Select 'Load unpacked' and point to the cloned repo directory holding the `manifest.json` file
 * Configure additional sites and timeout period if needed via the extension's 'options' screen
 
 ## Inspecting
